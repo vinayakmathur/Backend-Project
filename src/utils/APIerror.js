@@ -6,17 +6,17 @@ class APIerror extends error {
         stack = ''
 
     ){
-        super(message)
-        then.statusCode = statusCode
-        this.data = null
-        this.message = message
+        super(message);
+        this.statusCode = statusCode;
+        this.data = null;
+        this.message = message;
         this.success = false;
-        this.errors = errors
+        this.errors = errors;
 
         if(stack){
             this.stack = stack
         } else {
-            Error.captureStackTrace(this.this.constuctor)
+            Error.captureStackTrace(this,this.constuctor)
         }
     }
 }
